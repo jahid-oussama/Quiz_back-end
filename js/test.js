@@ -370,7 +370,7 @@ function getcorrectionfromdb() {
 
                 }
             }
-            console.log(wrongAnswers);
+            // console.log(wrongAnswers);
             let output = ""
             questionsObject.sort((a, b) => parseInt(a.id) > parseInt(b.id) ? 1 : -1);
             for (let i = 0; i < wrongAnswers.length; i++) {
@@ -387,7 +387,7 @@ function getcorrectionfromdb() {
                                 <br>
                                 <h5>${odata[j].answer}</h5>
                                 <br>
-                                <p>${questionsObject[i].justification}</p>
+                                <p style="margin-bottom: 15px;">${questionsObject[i].justification}</p>
                                 </div>
                                 <hr>
                                 

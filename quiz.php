@@ -23,11 +23,11 @@ function getcorrection(){
 function getQuestions()
 {
 
-    $query = "SELECT * FROM questions";
+    $query1 = "SELECT * FROM questions";
     $DB = new Database();
     $conn = $DB->connect();
 
-    $stmt = $conn->prepare($query);
+    $stmt = $conn->prepare($query1);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $data = array();
@@ -35,12 +35,15 @@ function getQuestions()
         $data[] = $row;
     }
 
+// echo "<pre>";
+    // print_r($datz);
+    // echo "</pre>";
+    // die;
 
-
-    $query = "SELECT * FROM answers";
+    $query2 = "SELECT * FROM answers";
     $DB = new Database();
     $conn = $DB->connect();
-    $stmt = $conn->prepare($query);
+    $stmt = $conn->prepare($query2);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $options = array();
